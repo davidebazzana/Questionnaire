@@ -1,19 +1,109 @@
-<form action="/result", method="get">
-  <fieldset id="group1">
-    <label>Quanto tempo dedichi alla lettura?</label><br>
-    <input type="radio" value="0" name="group1">Pochissimo
-    <input type="radio" value="1" name="group1">Poco
-    <input type="radio" value="2" name="group1">Tanto
-    <input type="radio" value="3" name="group1">Tantissimo
-  </fieldset>
+{% extends "layout.html" %}
+{% block content %}
+<main>
+  <h1 class="visually-hidden">Questionario</h1>
 
-  <fieldset id="group2">
-    <label>Ti piace risolvere problemi?</label><br>
-    <input type="radio" value="0" name="group2">Pochissimo
-    <input type="radio" value="1" name="group2">Poco
-    <input type="radio" value="2" name="group2">Tanto
-    <input type="radio" value="3" name="group2">Tantissimo
-  </fieldset>
+  <div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Questionario</h1>
+    <hr/>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Ciao! Io sono Mollami, e voglio aiutarti a seguire i tuoi sogni per costruire un futuro felice e radioso.
+        Ti piace l’arte? Sei un sognatore? Allora sei sicuramente nel posto giusto.
+        Scegli chi sarai domani, non accontentare gli altri, dì MOLLAMI e scopri il percorso universitario più adatto a te.        
+        </p>
+    </div>
+  </div>
 
-  <input type="submit" value="Submit">
-</form>
+  <div class="b-example-divider"></div>
+
+</main>
+
+<div class="d-flex gap-5 justify-content-center" style="margin-bottom: 25px;">
+
+  <form action="/result", method="get">
+    <div class="list-group mx-0 w-auto">
+      <label class="question">Quanto tempo dedichi alla lettura?</label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group0" id="listGroupRadios1" value="0">
+        <span>
+          Pochissimo
+          <small class="d-block text-muted">Meno di 2 ore a settimana</small>
+        </span>
+      </label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group0" id="listGroupRadios2" value="1">
+        <span>
+          Poco
+          <small class="d-block text-muted">Meno di 5 ore a settimana</small>
+        </span>
+      </label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group0" id="listGroupRadios3" value="2">
+        <span>
+          Tanto
+          <small class="d-block text-muted">Più di 5 ore ma meno di 10 ore a settimana</small>
+        </span>
+      </label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group0" id="listGroupRadios3" value="3">
+        <span>
+          Tantissimo
+          <small class="d-block text-muted">Più di 10 ore a settimana</small>
+        </span>
+      </label>
+    </div>
+    <hr/>
+    <div class="list-group mx-0 w-auto">
+      <label class="question">Ti piace risolvere problemi?</label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group1" id="listGroupRadios1" value="0">
+        <span>
+          Pochissimo
+        </span>
+      </label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group1" id="listGroupRadios2" value="1">
+        <span>
+          Poco
+        </span>
+      </label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group1" id="listGroupRadios3" value="2">
+        <span>
+          Tanto
+        </span>
+      </label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group1" id="listGroupRadios3" value="3">
+        <span>
+          Tantissimo
+        </span>
+      </label>
+    </div>
+    <hr/>
+    <div class="list-group mx-0 w-auto">
+      <label class="question">Ti piace lavorare in gruppo?</label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group2" id="listGroupRadios1" value="0">
+        <span>
+          Si
+        </span>
+      </label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group2" id="listGroupRadios2" value="1">
+        <span>
+          No
+        </span>
+      </label>
+      <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="radio" name="group2" id="listGroupRadios3" value="2">
+        <span>
+          Indifferente
+        </span>
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
