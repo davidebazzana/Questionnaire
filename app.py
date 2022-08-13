@@ -10,13 +10,16 @@ NUMBER_OF_CLASSES = 2
 WEIGHT_VECTORS = [
     [[8, 2], [4, 6], [6, 4], [2, 8]],
     [[2, 8], [4, 6], [6, 4], [8, 2]],
-    [[9, 5], [1, 5], [5, 5]]
+    [[9, 5], [1, 5], [5, 5]],
+    [[1, 1], [2, 2], [7, 7], [8, 8], [9, 9]],
+    [[1, 1], [2, 2], [7, 7], [8, 8], [9, 9]]
     ]
 CLASS_PAGE = [
     "science_guy.html", 
     "art_guy.html"
     ]
 
+@app.route("/", methods=['GET'])
 @app.route("/questionnaire", methods=['GET'])
 def get_questionnaire():
     return render_template('questionnaire.html')

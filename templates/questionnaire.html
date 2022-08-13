@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
 <main>
-  <h1 class="visually-hidden">Questionario</h1>
+  <h1 class="visually-hidden">Chi sarò domani?</h1>
 
   <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Questionario</h1>
+    <h1 class="display-5 fw-bold">Chi sarò domani?</h1>
     <hr/>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Ciao! Io sono Mollami, e voglio aiutarti a seguire i tuoi sogni per costruire un futuro felice e radioso.
@@ -18,7 +18,7 @@
 
 </main>
 
-<div class="d-flex gap-5 justify-content-center" style="margin-bottom: 25px;">
+<div class="d-flex gap-5 justify-content-center" style="margin-bottom: 5%; margin-left: 5%; margin-right: 5%;">
 
   <form action="/result", method="get">
     <div class="list-group mx-0 w-auto">
@@ -102,6 +102,64 @@
         </span>
       </label>
     </div>
+
+    <hr/>
+
+    <div class="container">
+      <div class="row mb-3 text-center">
+        <div class="col"><small class="d-block text-muted questions-options">Fortemente in disaccordo</small></div>
+        <div class="col"><small class="d-block text-muted questions-options">In disaccordo</small></div>
+        <div class="col"><small class="d-block text-muted questions-options">Né in disaccordo né d'accordo</small></div>
+        <div class="col"><small class="d-block text-muted questions-options">D’accordo</small></div>
+        <div class="col"><small class="d-block text-muted questions-options">Fortemente d’accordo</small></div>
+      </div>
+  
+      <div class="row mb-3 text-center">
+        <div class="col question">Penso di valere almeno quanto gli altri</div>
+      </div>
+
+      <div class="row mb-3 text-center">
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group3" id="listGroupRadios1" value="0">
+        </div>
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group3" id="listGroupRadios2" value="1">
+        </div>
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group3" id="listGroupRadios3" value="2">
+        </div>
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group3" id="listGroupRadios4" value="3">
+        </div>
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group3" id="listGroupRadios5" value="4">
+        </div>
+      </div>
+
+      <div class="row mb-3 text-center">
+        <div class="col question">Ho un atteggiamento positivo verso me stesso</div>
+      </div>
+
+      <div class="row mb-3 text-center">
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group4" id="listGroupRadios1" value="0">
+        </div>
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group4" id="listGroupRadios2" value="1">
+        </div>
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group4" id="listGroupRadios3" value="2">
+        </div>
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group4" id="listGroupRadios4" value="3">
+        </div>
+        <div class="col themed-grid-col grid-questions">
+          <input class="form-check-input flex-shrink-0" type="radio" name="group4" id="listGroupRadios5" value="4">
+        </div>
+      </div>
+    </div>
+
+    <hr/>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
