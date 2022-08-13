@@ -1,5 +1,7 @@
-id,question_text,question_type,question_category,is_first_in_scale_group,is_last_in_scale_group,number_of_answers_possible,first_answer,second_answer,third_answer,fourth_answer,fifth_answer,sixth_answer
-0,Penso di valere almeno quanto gli altri,scale,personal,1,0,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo,,
-1,Ho un atteggiamento positivo verso me stesso,scale,personal,0,1,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo,,
-2,Quando devo affrontare un progetto importante:,boolean,personal,,,2,passo troppo tempo a pensare da quale parte iniziare,non ho alcun problema a cominciare,,,,,
-3,Architetto,scale,professional,1,0,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+id,question_text,question_type,question_category,is_first_in_category,is_first_in_group,is_last_in_group,group_description,number_of_answers_possible,first_answer,second_answer,third_answer,fourth_answer,fifth_answer,sixth_answer
+0,Penso di valere almeno quanto gli altri,scale,personale,1,1,0,Queste affermazioni descrivono alcune esperienze comuni che possono essere difficili da affrontare.,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo,,
+1,Ho un atteggiamento positivo verso me stesso,scale,personale,0,0,1,,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo,,
+2,Quando devo affrontare un progetto importante:,boolean,personale,0,0,0,,2,passo troppo tempo a pensare da quale parte iniziare,non ho alcun problema a cominciare,,,,,
+3,Architetto,scale,professionale,1,1,0,Qui troverai elencate una serie di professioni legate al mondo dell’arte. Per ognuna indica quanto sei sicuro/a di avere la capacità per poterle svolgere o quanto pensi di volerle intraprendere.,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+4,Pubblicitario,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+5,Restauratore,scale,professionale,0,0,1,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
