@@ -21,6 +21,7 @@
 <div class="d-flex gap-5 justify-content-center" style="margin-bottom: 5%; margin-left: 5%; margin-right: 5%;">
 
   <form action="/result", method="get">
+    <br>
     {% for question in questions %}
       {% if question["is_first_in_category"] %}
         <p class="category-title">Blocco {{question["question_category"]}}</p>
@@ -68,7 +69,7 @@
       {% endif %}
     {% endfor %}
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Risultato</button>
   </form>
 </div>
 {% endblock %}
