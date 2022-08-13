@@ -4,15 +4,6 @@ from flask import (
 from questionnaire_app.db import get_db
 
 NUMBER_OF_CLASSES = 2
-# [science_guy, art_guy]
-# All the scores go from 0 to 10
-WEIGHT_VECTORS = [
-    [[8, 2], [4, 6], [6, 4], [2, 8]],
-    [[2, 8], [4, 6], [6, 4], [8, 2]],
-    [[9, 5], [1, 5], [5, 5]],
-    [[1, 1], [2, 2], [7, 7], [8, 8], [9, 9]],
-    [[1, 1], [2, 2], [7, 7], [8, 8], [9, 9]]
-    ]
 CLASS_PAGE = [
     "science_guy.html", 
     "art_guy.html"

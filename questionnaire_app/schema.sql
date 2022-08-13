@@ -5,6 +5,8 @@ CREATE TABLE question (
     question_text TEXT NOT NULL,
     question_type TEXT NOT NULL,
     question_category TEXT NOT NULL,
+    is_first_in_scale_group INTEGER,
+    is_last_in_scale_group INTEGER,
     number_of_answers_possible INTEGER,
     first_answer TEXT NOT NULL,
     second_answer TEXT NOT NULL,

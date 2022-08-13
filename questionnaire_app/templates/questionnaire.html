@@ -22,47 +22,49 @@
 
   <form action="/result", method="get">
     {% for question in questions %}
-      <!-- First category of questions -->
-      {% if question["question_category"] == "personal" %}
-        {% if question["question_type"] == "scale" %}
-          <div class="container" style="margin-top: 20px;">
+      {% if question["question_type"] == "scale" %}
+        <div class="container" style="margin-top: 20px;">
+          {% if question["is_first_in_scale_group"] %}
             <div class="row mb-3 text-center">
               {% for i in range(question["number_of_answers_possible"]) %}
-                <div class="col"><small class="d-block text-muted questions-options">{{question[5+i]}}</small></div>
+                <div class="col"><small class="d-block text-muted questions-options">{{question[7+i]}}</small></div>
               {% endfor %}
             </div>
-        
-            <div class="row mb-3 text-center">
-              <div class="col question">{{question["question_text"]}}</div>
-            </div>
+          {% endif %}
 
-            <div class="row mb-3 text-center">
-              {% for i in range(question["number_of_answers_possible"]) %}
-                <div class="col themed-grid-col grid-questions">
-                  <input class="form-check-input flex-shrink-0" type="radio" name="{{question['id']}}" value="{{i}}">
-                </div>
-              {% endfor %}
-            </div>
+          <div class="row mb-3 text-center">
+            <div class="col question">{{question["question_text"]}}</div>
           </div>
-        {% elif question["question_type"] == "boolean" %}
-          <div class="list-group mx-0 w-auto">
-            <label class="question">{{question["question_text"]}}</label>
-            <label class="list-group-item d-flex gap-2">
-              <input class="form-check-input flex-shrink-0" type="radio" name="{{question['id']}}" value="0">
-              <span>
-                {{ question["first_answer"] }}
-              </span>
-            </label>
-            <label class="list-group-item d-flex gap-2">
-              <input class="form-check-input flex-shrink-0" type="radio" name="{{question['id']}}" value="1">
-              <span>
-                {{ question["second_answer"] }}
-              </span>
-            </label>
+
+          <div class="row mb-3 text-center">
+            {% for i in range(question["number_of_answers_possible"]) %}
+              <div class="col themed-grid-col grid-questions {{question['question_category']}}">
+                <input class="form-check-input flex-shrink-0" type="radio" name="{{question['id']}}" value="{{i}}">
+              </div>
+            {% endfor %}
           </div>
-        {% endif %}
+        </div>
+      {% elif question["question_type"] == "boolean" %}
+        <div class="list-group mx-0 w-auto">
+          <label class="question">{{question["question_text"]}}</label>
+          <label class="list-group-item d-flex gap-2">
+            <input class="form-check-input flex-shrink-0" type="radio" name="{{question['id']}}" value="0">
+            <span>
+              {{ question["first_answer"] }}
+            </span>
+          </label>
+          <label class="list-group-item d-flex gap-2">
+            <input class="form-check-input flex-shrink-0" type="radio" name="{{question['id']}}" value="1">
+            <span>
+              {{ question["second_answer"] }}
+            </span>
+          </label>
+        </div>
+        <hr/>
       {% endif %}
-      <hr/>
+      {% if question["is_last_in_scale_group"] %}
+        <hr/>
+      {% endif %}
     {% endfor %}
 
     <button type="submit" class="btn btn-primary">Submit</button>

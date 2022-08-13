@@ -1,4 +1,5 @@
-id,question_text,question_type,question_category,number_of_answers_possible,first_answer,second_answer,third_answer,fourth_answer,fifth_answer,sixth_answer
-0,Penso di valere almeno quanto gli altri,scale,personal,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo
-1,Ho un atteggiamento positivo verso me stesso,scale,personal,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo
-2,Quando devo affrontare un progetto importante:,boolean,personal,2,passo troppo tempo a pensare da quale parte iniziare,non ho alcun problema a cominciare
+id,question_text,question_type,question_category,is_first_in_scale_group,is_last_in_scale_group,number_of_answers_possible,first_answer,second_answer,third_answer,fourth_answer,fifth_answer,sixth_answer
+0,Penso di valere almeno quanto gli altri,scale,personal,1,0,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo,,
+1,Ho un atteggiamento positivo verso me stesso,scale,personal,0,1,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo,,
+2,Quando devo affrontare un progetto importante:,boolean,personal,,,2,passo troppo tempo a pensare da quale parte iniziare,non ho alcun problema a cominciare,,,,,
+3,Architetto,scale,professional,1,0,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
