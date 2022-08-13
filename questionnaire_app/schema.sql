@@ -1,7 +1,11 @@
-CREATE TABLE IF NOT EXISTS question (
+DROP TABLE IF EXISTS question;
+DROP TABLE IF EXISTS ans_weight;
+CREATE TABLE question (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     question_text TEXT NOT NULL,
     question_type TEXT NOT NULL,
+    question_category TEXT NOT NULL,
+    number_of_answers_possible INTEGER,
     first_answer TEXT NOT NULL,
     second_answer TEXT NOT NULL,
     third_answer TEXT,
@@ -9,11 +13,11 @@ CREATE TABLE IF NOT EXISTS question (
     fifth_answer TEXT,
     sixth_answer TEXT
 );
-CREATE TABLE IF NOT EXISTS answer (
-    question_id INTEGER,
-    answer_id INTEGER,
-    science_weight INTEGER,
-    art_weight INTEGER,
+CREATE TABLE ans_weight (
+    question_id INTEGER NOT NULL,
+    answer_id INTEGER NOT NULL,
+    science_weight INTEGER NOT NULL,
+    art_weight INTEGER NOT NULL,
     FOREIGN KEY(question_id) REFERENCES question(id),
     PRIMARY KEY (question_id, answer_id)
 );
