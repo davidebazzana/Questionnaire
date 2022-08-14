@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS question;
 DROP TABLE IF EXISTS ans_weight;
 CREATE TABLE question (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY,
     question_text TEXT NOT NULL,
     question_type TEXT NOT NULL,
     question_category TEXT NOT NULL,
