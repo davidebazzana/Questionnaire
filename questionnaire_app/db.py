@@ -6,8 +6,6 @@ import click
 from flask import current_app, g
 from flask.cli import with_appcontext
 
-TABLES_NAME_AND_NUMBER_OF_COLUMNS = [('question',15), ('ans_weight',4)]
-
 def get_db():
     if 'db' not in g:
         g.db = sqlite3.connect(
@@ -37,11 +35,16 @@ def import_questions_answers_weights_from_csv():
 
     mod_path = Path(__file__).parent.parent
     
-    for table in TABLES_NAME_AND_NUMBER_OF_COLUMNS:
-        src_path = (mod_path/f"{table[0]}s.csv").resolve()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name != 'sqlite_sequence';")
+    tables = cursor.fetchall()
+    for table in tables:
+        cursor.execute(f"PRAGMA table_info ({table['name']})")
+        table_info = cursor.fetchall()
+        table_n_columns = len(table_info)
+        src_path = (mod_path/f"{table['name']}s.csv").resolve()
         file = open(src_path)
         contents = csv.reader(file)
-        insert_records = f"INSERT INTO {table[0]} {tuple(contents.__next__())} VALUES ({ (table[1]-1)*'?,' + '?'})"
+        insert_records = f"INSERT INTO {table['name']} {tuple(contents.__next__())} VALUES ({ (table_n_columns-1)*'?,' + '?'})"
         cursor.executemany(insert_records, contents)
 
     db.commit()
