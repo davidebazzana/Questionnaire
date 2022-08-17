@@ -3,19 +3,17 @@ version: "3.3"
 services:
   questionnaire:
     build:
-      context: .
-      dockerfile: ./Dockerfile
-    image: questionnaire:v0.2
+      context: ./services/questionnaire/
+    image: questionnaire.azurecr.io/questionnaire:v0.1
     container_name: questionnaire
     command: gunicorn -w 2 --bind 0.0.0.0:5000 wsgi:app
     expose:
       - "5000"
   nginx:
     build:
-      context: ./nginx
-    image:
-      questionnaire_nginx:v0.1
+      context: ./services/nginx/
+    image: questionnaire.azurecr.io/questionnaire_nginx:v0.1
     ports:
-      - 1337:80
+      - 80:80
     depends_on:
       - questionnaire
