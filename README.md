@@ -23,8 +23,12 @@ If the docker images of the app already exist, then just start the containers:
 
 ## On the cloud (Azure)
 If the docker images of the app already exists in a container registry, then all you need to do is to run a group of container based on those images.  
-First, login into azure:  
+First, log in to azure with the docker login command:  
 `docker login azure`  
+Log in to your azure account using the azure cli:   
+`az login --use-device-code`   
+Log in to your azure container registry:   
+`az acr login --name questionnaire`   
 Then create a context in order to perform the docker commands into the remote azure cloud:  
 `docker context create aci questionnaire`  
 Switch to that context:  
@@ -35,12 +39,12 @@ To shut down the containers:
 `docker compose down`  
   
 If the images do not exist in any container registry already then upload the images.  
-First, login into your azure account (only first access):  
+First, log in to your azure account (only first access):  
 `az login --use-device-code`  
 Then create a resource group and a container register (if not existing already):  
 `az group create --name questionnaire --location westeurope`  
 `az acr create --resource-group questionnaire --name questionnaire --sku Standard`  
-Login into your azure container registry (the registry must exists):  
+Log in to your azure container registry (the registry must exists):  
 `az acr login --name questionnaire`  
 Use the default context:  
 `docker context use default`  
