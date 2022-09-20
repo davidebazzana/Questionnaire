@@ -1,10 +1,12 @@
 # Usage
 ## Locally
-When using the flask development server or gunicorn, create a python venv and install the dependencies listed in the requirements file:  
+When using the flask development server or gunicorn, create a python venv, install the dependencies listed in the requirements file and set the `SECRET_KEY` environment variable:  
 `python3 -m venv /path/to/new/virtual/environment`  
 `source /path/to/new/virtual/environment/bin/activate`  
 `python3 -m pip install --upgrade pip`  
 `pip install -r /path/to/Questionnaire/services/questionnaire/requirements.txt`  
+`export SECRET_KEY=some_random_value`   
+Note: `SECRET_KEY` can be set to any value, since the server will run locally and in a development environment.
 ### Using the default flask development web server (not production!)
 Initialize the database and import the content of the csv files inside it:  
 `/path/to/Questionnaire/services/questionnaire$ flask --app questionnaire_app init-db`  

@@ -62,14 +62,17 @@
             </span>
           </label>
         </div>
-        <hr/>
       {% endif %}
       {% if question["is_last_in_group"] %}
         <hr/>
       {% endif %}
     {% endfor %}
 
-    <button type="submit" class="btn btn-primary">Risultato</button>
+    <p style="text-align: center;">Grazie per averci dedicato un po' del tuo tempo</p>
+
+    <div style="text-align: center;">
+      <button type="submit" class="btn btn-primary">Risultato</button>
+    </div>
   </form>
 </div>
 {% endblock %}

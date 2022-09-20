@@ -2,6 +2,48 @@ id,question_text,question_type,question_category,is_first_in_category,is_first_i
 0,Penso di valere almeno quanto gli altri,scale,personale,1,1,0,Queste affermazioni descrivono alcune esperienze comuni che possono essere difficili da affrontare.,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo,
 1,Ho un atteggiamento positivo verso me stesso,scale,personale,0,0,1,,5,Fortemente in disaccordo,In disaccordo,Né in disaccordo né d'accordo,D’accordo,Fortemente d’accordo,
 2,Quando devo affrontare un progetto importante:,boolean,personale,0,0,0,,2,passo troppo tempo a pensare da quale parte iniziare,non ho alcun problema a cominciare,,,,
-3,Architetto,scale,professionale,1,1,0,Qui troverai elencate una serie di professioni legate al mondo dell’arte. Per ognuna indica quanto sei sicuro/a di avere la capacità per poterle svolgere o quanto pensi di volerle intraprendere.,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
-4,Pubblicitario,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
-5,Restauratore,scale,professionale,0,0,1,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+3,Quando qualcuno mi dà un consiglio su un mio progetto:,boolean,personale,0,0,0,,2,"lo ascolto, perchè ne sa più di me",continuo per la mia strada,,,,
+4,Pensando al futuro:,boolean,personale,0,0,1,,2,non ho idea di cosa fare,ho chiaro il mio obiettivo,,,,
+5,Capisco quando gli altri hanno bisogno del mio aiuto,scale,personale,0,1,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+6,Mi piace fare le cose ragionandoci molto sopra,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+7,Mi tengo sempre informato/a su quello che succede nel mondo,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+8,Mi sforzo di primeggiare sugli altri,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+9,Dedico molto tempo alla revisione dei lavori che faccio,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+10,Mi piacerebbe lavorare in un ambiente in cui c'è competizione tra i colleghi,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+11,Sono una persona metodica e ordinata e organizzo la mia vita in modo scrupoloso,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+12,Mi sforzo sempre di vedere le cose da angolature differenti,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+13,Se devo rispettare una scadenza cerco di applicarmi fino al limite delle mie forze,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+14,È difficile che le critiche altrui mi feriscano,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+15,Mi piace fare diverse attività allo stesso tempo,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+16,Mi piacciono le situazioni che mettono alla prova le mie capacità,scale,personale,0,0,0,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+17,Difficilmente desisto da un'attività che ho intrapreso,scale,personale,0,0,1,,5,Assolutamente falso per me,Piuttosto falso per me,Né vero né falso,Abbastanza vero per me,Assolutamente vero per me,
+18,Architetto,scale,professionale,1,1,0,Qui troverai elencate una serie di professioni legate al mondo dell’arte. Per ognuna indica quanto sei sicuro/a di avere la capacità per poterle svolgere o quanto pensi di volerle intraprendere.,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+19,Pubblicitario,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+20,Restauratore,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+21,Pittore,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+22,Scultore,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+23,Insegnante storia dell'arte,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+24,Guida Turistica,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+25,Artigiano,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+26,Illustratore,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+27,Giornalista d'arte,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+28,Art Director,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+29,"Designer (Graphic, Exhibit, Visual, Product, Interior, UX/UI, Fashion)",scale,professionale,0,0,1,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+30,Pittura,scale,professionale,0,1,0,Di seguito troverai elencati alcuni corsi di laurea. Per ognuno indica quanto è probabile che tu ti iscriva ad esso.,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+31,Scultura,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+32,Fotografia,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+33,Graphic Design,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+34,Illustrazione,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+35,Media Design,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+36,Cinema,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+37,Sound Design,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+38,Video Design e Film Making,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+39,Scenografia,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+40,Comunicazione digitale e nuovi media,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+41,Design del prodotto industriale,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+42,Design della comunicazione,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+43,Design della moda,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+44,Design di interni,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+45,Web Design e Comunicazione visiva,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+46,Architettura,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
+47,"DAMS: Scienze e tecniche di arti figurative, musica, moda e spettacolo",scale,professionale,0,0,1,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
