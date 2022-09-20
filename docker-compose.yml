@@ -13,6 +13,7 @@ services:
     build:
       context: ./services/nginx/
     image: questionnaire.azurecr.io/questionnaire_nginx:v0.1
+    domainname: "mollami"
     ports:
       - 80:80
     depends_on:
