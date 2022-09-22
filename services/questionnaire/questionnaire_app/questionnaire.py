@@ -2,6 +2,9 @@ from flask import (
     Flask, Blueprint, g, request, render_template, redirect
 )
 from questionnaire_app.db import get_db
+import os
+import psycopg2
+import atexit
 
 NUMBER_OF_CLASSES = 2
 CLASS_PAGE = [
@@ -12,6 +15,28 @@ CLASS_PAGE = [
 bp = Blueprint('questionnaire', __name__,
                         template_folder='templates')
 
+try:
+    conn = psycopg2.connect(dbname='mollami-data', 
+                            user='mollami@mollami-data-server', 
+                            host='mollami-data-server.postgres.database.azure.com', 
+                            password=os.environ.get("STATISTICS_DB_PASSWORD"), 
+                            port='5432', 
+                            sslmode='require')
+except:
+    print("Unable to reach mollami-data-server.postgres.database.azure.com")
+
+def write_to_statistics(query):
+    cur = conn.cursor()
+    cur.execute(query)
+    conn.commit()
+    print("Performed query: " + query)
+
+def close_connection_with_statistics_db():
+    conn.close()
+    print("Successfully closed connection with mollami-data-server.postgres.database.azure.com")
+
+atexit.register(close_connection_with_statistics_db)
+
 @bp.route("/", methods=['GET'])
 @bp.route("/questionnaire", methods=['GET'])
 def get_questionnaire():
@@ -19,6 +44,7 @@ def get_questionnaire():
     cursor = db.cursor()
     cursor.execute(f"SELECT * FROM question")
     questions = cursor.fetchall()
+    write_to_statistics("INSERT INTO visit VALUES (DEFAULT, DEFAULT);")
     return render_template('questionnaire.html', questions=questions)
 
 @bp.route("/result", methods=['GET'])
