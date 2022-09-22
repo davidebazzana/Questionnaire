@@ -28,7 +28,7 @@ id,question_text,question_type,question_category,is_first_in_category,is_first_i
 26,Illustratore,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
 27,Giornalista d'arte,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
 28,Art Director,scale,professionale,0,0,0,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
-29,"Designer (Graphic, Exhibit, Visual, Product, Interior, UX/UI, Fashion)",scale,professionale,0,0,1,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
+29,"Designer",scale,professionale,0,0,1,,6,Molto insicuro,Abbastanza insicuro,Un po’ insicuro,Un po’ sicuro,Abbastanza sicuro,Molto sicuro
 30,Pittura,scale,professionale,0,1,0,Di seguito troverai elencati alcuni corsi di laurea. Per ognuno indica quanto è probabile che tu ti iscriva ad esso.,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
 31,Scultura,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
 32,Fotografia,scale,professionale,0,0,0,,3,Estremamente indesiderabile,Né indesiderabile né desiderabile, Estremamente desiderabile,,,
