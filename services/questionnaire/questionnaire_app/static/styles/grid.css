@@ -1,13 +1,21 @@
 .themed-grid-col {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  background-color: rgba(86, 61, 124, .15);
-  border: 1px solid rgba(86, 61, 124, .2);
+  background-color: rgba(31.000000052154064, 27.000000290572643, 219.0000021457672, 1);
+  border: 1px solid rgba(31.000000052154064, 27.000000290572643, 219.0000021457672, 1);
 }
 
 .themed-container {
   padding: .75rem;
   margin-bottom: 1.5rem;
-  background-color: rgba(0, 123, 255, .15);
-  border: 1px solid rgba(0, 123, 255, .2);
+  background-color: rgba(31.000000052154064, 27.000000290572643, 219.0000021457672, 1);
+  border: 1px solid rgba(31.000000052154064, 27.000000290572643, 219.0000021457672, 1);
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
 }

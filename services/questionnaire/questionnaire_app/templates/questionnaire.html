@@ -7,12 +7,20 @@
     <div class="imgbox">
       <img class="center-fit" src='../static/Adesivi-07.png'>
     </div>
-    <hr/>
+    <br>
     <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4 text">Ciao! Io sono Mollami, e voglio aiutarti a seguire i tuoi sogni per costruire un futuro felice e radioso.
-        Ti piace l’arte? Sei un sognatore? Allora sei sicuramente nel posto giusto.
-        Scegli chi sarai domani, non accontentare gli altri, dì MOLLAMI e scopri il percorso universitario più adatto a te.        
-        </p>
+      <p class="lead mb-4 text">      
+        Chi sarò domani: quante volte ti sei posto/a questa domanda?
+Con il questionario che hai davanti vogliamo schiarirti le idee.<br>
+Ti piace l’arte? Vorresti dedicarti al mondo del design e della comunicazione ma non sai come fare?<br>
+Scegli chi vuoi essere, non accontentare gli altri.<br>
+Dì MOLLAMI, e scopri il percorso universitario più adatto a te.
+      </p>
+      <hr/>
+      <p class="lead mb-4 text">
+        Per completare il questionario ci vorranno solo 10 minuti del tuo tempo, che potrebbero evitarti 5 anni di corsi per una scelta sbagliata.<br>
+Rispondi a tutte le domande, senza stress, non ci sono risposte giuste o sbagliate, segui l’istinto.
+      </p>
     </div>
   </div>
 
@@ -20,61 +28,65 @@
 
 </main>
 
-<div class="d-flex gap-5 justify-content-center" style="margin-bottom: 5%; margin-left: 5%; margin-right: 5%;">
+<div class="d-flex gap-5 justify-content-center" style="margin-bottom: 5%;">
 
   <form action="/result", method="get">
     <br>
     {% for question in questions %}
       {% if question["is_first_in_category"] %}
         {% if question["question_category"] == "personale" %}
-          <img class="center-fit categories-title" src='../static/personale.png'>
+          <img class="center-fit categories-title" src='../static/Adesivi-10.png'>
         {% elif question["question_category"] == "professionale" %}
-          <img class="center-fit categories-title" src='../static/professionale.png'>
+          <div class="b-example-divider"></div>
+          <br> 
+          <img class="center-fit categories-title" src='../static/Adesivi-11.png'>
         {% endif %}
       {% endif %}
-      {% if question["is_first_in_group"] %}
-        <div class="container text-center text" style="max-width: 600px;">
-          {{question["group_description"]}}
-        </div>
-      {% endif %}
-      {% if question["question_type"] == "scale" %}
-        <div class="container text-center text" style="margin-top: 20px;">
-          <div class="row mb-3 text-center">
-            <div class="col text question">{{question["question_text"]}}</div>
+      <div style="margin-left: 5%; margin-right: 5%;">
+        {% if question["is_first_in_group"] %}
+          <hr/>
+          <div class="container text-center text" style="max-width: 600px;">
+            {{question["group_description"]}}
           </div>
+        {% endif %}
+        {% if question["question_type"] == "scale" %}
+          <div class="container text-center text" style="margin-top: 20px;">
+            <div class="row mb-3 text-center">
+              <div class="col text question">{{question["question_text"]}}</div>
+            </div>
 
-          <div class="row mb-3 text-center">
-            {% for i in range(question["number_of_answers_possible"]) %}
-              <div class="col themed-grid-col grid-questions">
-                <input class="form-check-input flex-shrink-0" type="radio" name="{{question['id']}}" value="{{i}}">
-                <div class="col"><small class="d-block text-muted questions-options">{{question[9+i]}}</small></div>
-              </div>
-            {% endfor %}
+            <div class="row mb-3 text-center">
+              {% for i in range(question["number_of_answers_possible"]) %}
+                <div class="col themed-grid-col grid-questions">
+                  <input class="form-check-input flex-shrink-0" type="radio" name="{{question['id']}}" value="{{i}}">
+                  <div class="col"><small class="d-block text-muted questions-options">{{question[9+i]}}</small></div>
+                </div>
+              {% endfor %}
+            </div>
           </div>
-        </div>
-      {% elif question["question_type"] == "boolean" %}
-        <div class="list-group mx-0 w-auto text">
-          <label class="question text" style="margin-bottom: 20px;">{{question["question_text"]}}</label>
-          <label class="list-group-item d-flex gap-3">
-            <input class="form-check-input flex-shrink-0 boolean" type="radio" name="{{question['id']}}" value="0">
-            <span>
-              {{ question["first_answer"] }}
-            </span>
-          </label>
-          <label class="list-group-item d-flex gap-3">
-            <input class="form-check-input flex-shrink-0 boolean" type="radio" name="{{question['id']}}" value="1">
-            <span>
-              {{ question["second_answer"] }}
-            </span>
-          </label>
-        </div>
-      {% endif %}
-      {% if question["is_last_in_group"] %}
-        <hr/>
-      {% endif %}
+        {% elif question["question_type"] == "boolean" %}
+          <div class="list-group mx-0 w-auto text">
+            <label class="question text" style="margin-bottom: 20px;">{{question["question_text"]}}</label>
+            <label class="list-group-item d-flex gap-3">
+              <input class="form-check-input flex-shrink-0 boolean" type="radio" name="{{question['id']}}" value="0">
+              <span>
+                {{ question["first_answer"] }}
+              </span>
+            </label>
+            <label class="list-group-item d-flex gap-3">
+              <input class="form-check-input flex-shrink-0 boolean" type="radio" name="{{question['id']}}" value="1">
+              <span>
+                {{ question["second_answer"] }}
+              </span>
+            </label>
+          </div>
+        {% endif %}
+      </div>
     {% endfor %}
 
-    <p class="text" style="text-align: center;">Grazie per averci dedicato un po' del tuo tempo</p>
+    <p class="text" style="text-align: center;"><br>Sei arrivato/a alla fine del questionario.<br>
+      Clicca qui per scoprire chi potresti essere.<br>
+      Libera e orienta il tuo futuro e dì #mollami a chi non sarà d’accordo con te.</p>
 
     <div style="text-align: center;">
       <button type="submit" class="btn btn-primary text" disabled>Risultato</button>

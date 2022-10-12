@@ -15,6 +15,7 @@ CLASS_PAGE = [
 bp = Blueprint('questionnaire', __name__,
                         template_folder='templates')
 
+"""
 try:
     conn = psycopg2.connect(dbname='mollami-data', 
                             user='mollami@mollami-data-server', 
@@ -36,6 +37,7 @@ def close_connection_with_statistics_db():
     print("Successfully closed connection with mollami-data-server.postgres.database.azure.com")
 
 atexit.register(close_connection_with_statistics_db)
+"""
 
 @bp.route("/", methods=['GET'])
 @bp.route("/questionnaire", methods=['GET'])
@@ -44,7 +46,7 @@ def get_questionnaire():
     cursor = db.cursor()
     cursor.execute(f"SELECT * FROM question")
     questions = cursor.fetchall()
-    write_to_statistics("INSERT INTO visit VALUES (DEFAULT, DEFAULT);")
+    # write_to_statistics("INSERT INTO visit VALUES (DEFAULT, DEFAULT);")
     return render_template('questionnaire.html', questions=questions)
 
 @bp.route("/result", methods=['GET'])
@@ -67,3 +69,7 @@ def get_result():
         print("-----------------------------------------------------------")
         """
     return render_template(CLASS_PAGE[personal_score.index(max(personal_score))])
+
+@bp.route("/profile_test", methods=['GET'])
+def profile_test():
+    return render_template("critic.html")

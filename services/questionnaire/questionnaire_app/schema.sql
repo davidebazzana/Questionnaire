@@ -20,8 +20,10 @@ CREATE TABLE question (
 CREATE TABLE ans_weight (
     question_id INTEGER NOT NULL,
     answer_id INTEGER NOT NULL,
-    science_weight INTEGER NOT NULL,
-    art_weight INTEGER NOT NULL,
+    pratico_weight INTEGER NOT NULL,
+    riflessivo_weight INTEGER NOT NULL,
+    critico_weight INTEGER NOT NULL,
+    razionale_weight INTEGER NOT NULL,
     FOREIGN KEY(question_id) REFERENCES question(id),
     PRIMARY KEY (question_id, answer_id)
 );
