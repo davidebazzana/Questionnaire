@@ -6,7 +6,7 @@ When using the flask development server or gunicorn, create a python venv, insta
 `python3 -m pip install --upgrade pip`  
 `pip install -r /path/to/Questionnaire/services/questionnaire/requirements.txt`  
 `export SECRET_KEY=some_random_value`   
-`export STATISTICS_DB_PASSWORD=admin_password_for_postgres_db`
+`export STATISTICS_DB_PASSWORD=admin_password_for_postgres_db`   
 Note: `SECRET_KEY` can be set to any value, since the server will run locally and in a development environment.
 ### Using the default flask development web server (not production!)
 Initialize the database and import the content of the csv files inside it:  
@@ -67,4 +67,10 @@ Access the new database with:
 `\c log`   
 
 ## Notes
-All the commands relative to docker and azure cli may need `sudo` to work properly.
+All the commands relative to docker and azure cli may need `sudo` to work properly.   
+   
+A file .env is needed when the application runs on docker. The file .env should contain the following:   
+```
+SECRET_KEY=<the_secret_key_of_the_app>
+STATISTICS_DB_PASSWORD=<the_password_of_the_postgresql_user>
+```
