@@ -44,10 +44,18 @@ Rispondi a tutte le domande, senza stress, non ci sono risposte giuste o sbaglia
       {% endif %}
       <div style="margin-left: 5%; margin-right: 5%;">
         {% if question["is_first_in_group"] %}
-          <hr/>
-          <div class="container text-center text" style="max-width: 600px;">
-            {{question["group_description"]}}
-          </div>
+          {% if question["id"] == 38 %}
+            <br>
+            <hr/>
+            <div class="container text-center text" style="max-width: 600px;">
+              {{question["group_description"]}}
+            </div>
+          {% else %}
+            <div class="container text-center text" style="max-width: 600px;">
+              {{question["group_description"]}}
+            </div>
+            <hr/>
+          {% endif %}
         {% endif %}
         {% if question["question_type"] == "scale" %}
           <div class="container text-center text" style="margin-top: 20px;">
@@ -89,7 +97,7 @@ Rispondi a tutte le domande, senza stress, non ci sono risposte giuste o sbaglia
       Libera e orienta il tuo futuro e dì #mollami a chi non sarà d’accordo con te.</p>
 
     <div style="text-align: center;">
-      <button type="submit" class="btn btn-primary text" disabled>Risultato</button>
+      <button type="submit" class="btn btn-primary text">Risultato</button>
     </div>
   </form>
 </div>

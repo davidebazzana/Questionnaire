@@ -6,6 +6,7 @@ When using the flask development server or gunicorn, create a python venv, insta
 `python3 -m pip install --upgrade pip`  
 `pip install -r /path/to/Questionnaire/services/questionnaire/requirements.txt`  
 `export SECRET_KEY=some_random_value`   
+`export STATISTICS_DB_PASSWORD=admin_password_for_postgres_db`
 Note: `SECRET_KEY` can be set to any value, since the server will run locally and in a development environment.
 ### Using the default flask development web server (not production!)
 Initialize the database and import the content of the csv files inside it:  
@@ -55,5 +56,15 @@ Push the docker image of the app to your azure container registry:
 In order to delete a specific image from the container registry:  
 `az acr repository delete --name questionnaire --image name_of_the_image:vX.X`  
 
+## Connect, initialize and query remote PostgreSQL database on azure
+In order to connect to the remote postgres db on azure run:   
+`psql "host=mollami-log.postgres.database.azure.com port=5432 dbname=log user=mollami@mollami-log password=admin_password sslmode=require"`   
+If it is the first time accessing a new azure postgresql server, then access the default database first:   
+`psql "host=mollami-log.postgres.database.azure.com port=5432 dbname=postgres user=mollami@mollami-log password=admin_password sslmode=require"`   
+Then, create the database:   
+`CREATE DATABASE log;`   
+Access the new database with:   
+`\c log`   
+
 ## Notes
-All the above commands may need `sudo` to work properly.
+All the commands relative to docker and azure cli may need `sudo` to work properly.

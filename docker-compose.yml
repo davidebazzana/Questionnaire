@@ -4,7 +4,7 @@ services:
   questionnaire:
     build:
       context: ./services/questionnaire/
-    image: questionnaire.azurecr.io/questionnaire:beta0.2
+    image: questionariomollami.azurecr.io/questionnaire:v0.1
     container_name: questionnaire
     command: gunicorn -w 2 --bind 0.0.0.0:5000 wsgi:app
     expose:
@@ -12,7 +12,7 @@ services:
   nginx:
     build:
       context: ./services/nginx/
-    image: questionnaire.azurecr.io/questionnaire_nginx:v0.1
+    image: questionariomollami.azurecr.io/questionnaire_nginx:v0.1
     domainname: "ungrandeqrcodeperungrandefuturo"
     ports:
       - 80:80
