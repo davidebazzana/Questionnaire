@@ -9,5 +9,4 @@ RUN pip install -r requirements.txt
 COPY ./ ./
 RUN chown -R app:app $APP_HOME
 USER app
-RUN flask init-db
 RUN rm *.csv

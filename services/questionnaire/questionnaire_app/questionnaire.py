@@ -17,15 +17,16 @@ CLASS = [
 bp = Blueprint('questionnaire', __name__,
                         template_folder='templates')
 
-try:
-    conn = psycopg2.connect(dbname='log', 
-                            user='mollami@mollami-log', 
-                            host='mollami-log.postgres.database.azure.com', 
-                            password=os.environ.get("STATISTICS_DB_PASSWORD"), 
-                            port='5432', 
-                            sslmode='require')
-except:
-    print("Unable to reach mollami-data-server.postgres.database.azure.com")
+print("SERVER: " + str(os.environ))
+# try:
+conn = psycopg2.connect(dbname='log', 
+                        user='mollami@mollami-log', 
+                        host='mollami-log.postgres.database.azure.com', 
+                        password=os.environ.get("STATISTICS_DB_PASSWORD"), 
+                        port='5432', 
+                        sslmode='require')
+# except:
+    # print("Unable to reach mollami-data-server.postgres.database.azure.com")
 
 def write_to_statistics(query):
     cur = conn.cursor()
@@ -73,6 +74,7 @@ def get_result():
         print(f"Page to dislay: {CLASS[personal_score.index(max(personal_score))]}")
         print("-----------------------------------------------------------")
         """
+    ### REMOVE COMMENT BEFORE FLIGHT ###
     write_to_statistics(f"INSERT INTO log (ts, result) VALUES (DEFAULT, '{CLASS[personal_score.index(max(personal_score))]}');")
     return render_template(CLASS[personal_score.index(max(personal_score))] + ".html")
 
