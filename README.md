@@ -31,11 +31,11 @@ First, log in to azure with the docker login command:
 Log in to your azure account using the azure cli:   
 `az login --use-device-code`   
 Log in to your azure container registry:   
-`az acr login --name questionnaire`   
+`az acr login --name questionariomollami`   
 Then create a context in order to perform the docker commands into the remote azure cloud:  
-`docker context create aci questionnaire`  
+`docker context create aci questionariomollami`  
 Switch to that context:  
-`docker context use questionnaire`  
+`docker context use questionariomollami`  
 Run the container:  
 `docker compose up`  
 To shut down the containers:  
@@ -46,15 +46,15 @@ First, log in to your azure account (only first access):
 `az login --use-device-code`  
 Then create a resource group and a container register (if not existing already):  
 `az group create --name questionnaire --location westeurope`  
-`az acr create --resource-group questionnaire --name questionnaire --sku Standard`  
+`az acr create --resource-group questionnaire --name questionariomollami --sku Standard`  
 Log in to your azure container registry (the registry must exists):  
-`az acr login --name questionnaire`  
+`az acr login --name questionariomollami`  
 Use the default context:  
 `docker context use default`  
 Push the docker image of the app to your azure container registry:  
 `docker-compose push`  
 In order to delete a specific image from the container registry:  
-`az acr repository delete --name questionnaire --image name_of_the_image:vX.X`  
+`az acr repository delete --name questionariomollami --image name_of_the_image:vX.X`  
 
 ## Connect, initialize and query remote PostgreSQL database on azure
 In order to connect to the remote postgres db on azure run:   
@@ -65,6 +65,9 @@ Then, create the database:
 `CREATE DATABASE log;`   
 Access the new database with:   
 `\c log`   
+Create the tables:   
+`CREATE TABLE visit (id SERIAL, ts TIMESTAMP WITHOUT TIME ZONE default (now() at time zone 'utc'));`   
+`CREATE TABLE log (id SERIAL, ts TIMESTAMP WITHOUT TIME ZONE default (now() at time zone 'utc'), result TEXT);`   
 
 ## Notes
 All the commands relative to docker and azure cli may need `sudo` to work properly.   

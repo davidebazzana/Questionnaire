@@ -4,7 +4,7 @@ services:
   questionnaire:
     build:
       context: ./services/questionnaire/
-    image: questionariomollami.azurecr.io/questionnaire:v1.2
+    image: questionariomollami.azurecr.io/questionnaire:v3.0
     environment:
       - SECRET_KEY=${SECRET_KEY}
       - STATISTICS_DB_PASSWORD=${STATISTICS_DB_PASSWORD}
@@ -15,7 +15,7 @@ services:
   nginx:
     build:
       context: ./services/nginx/
-    image: questionariomollami.azurecr.io/questionnaire_nginx:v1.0
+    image: questionariomollami.azurecr.io/questionnaire_nginx:v2.0
     domainname: "ungrandeqrcodeperungrandefuturo"
     ports:
       - 80:80

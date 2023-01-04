@@ -17,7 +17,6 @@ CLASS = [
 bp = Blueprint('questionnaire', __name__,
                         template_folder='templates')
 
-print("SERVER: " + str(os.environ))
 # try:
 conn = psycopg2.connect(dbname='log', 
                         user='mollami@mollami-log', 
